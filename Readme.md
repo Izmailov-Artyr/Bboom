@@ -22,18 +22,21 @@ cd bboom
 
 pip install -r requirements.txt
 
+
 Применить миграции
 
 python manage.py migrate
+
 Создайте суперюзера
 
 python manage.py createsuperuser
+
 Запустить сервер
 
 python manage.py runserver
+
+
 API адреса
-
-
 
 api/v1/posts/<int:pk>/ - API для удаления поста
 
