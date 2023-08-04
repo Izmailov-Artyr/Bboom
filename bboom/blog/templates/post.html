@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+</head>
+<body>
+    <div class="main">
+        {% csrf_token %}
+        <div class="posts">
+            {% for post in posts %}
+                <div class="post">
+                    <h1>{{ post.title }}</h1>
+                    <p>{{ post.body }}</p>
+                    <h3>автор - {{ post.user.username }}</h3>
+                </div>
+                {% if user.is_authenticated %}
+                    <div class="form">
+                        <a href="{% url 'delete-post' post.pk%}"class="btn btn-primary">Удалить</a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            {% if user.is_authenticated %} <li><a href="/post/add">Новый пост</a>{%endif%}
+                <div id="commonbox" >
+                    <a href="/" ></a>
+                </div>
+        </div>
+    </div>
+
+</body>
+</html>

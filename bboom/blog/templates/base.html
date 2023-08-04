@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="main">
+        <div class="users">
+            {% for user in users %}
+                <div class="user">
+                    <h1>
+                        <a href="posts/{{ user.pk }}">{{ user.name }}</a>
+                    </h1>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

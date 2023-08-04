@@ -1,0 +1,10 @@
+<h2>Удаление поста</h2>
+
+<form method="POST">
+  {% csrf_token %}
+  <p>Уверены, что хотите удалить данный пост "{{post.title}}"?</p>
+  <div>
+    <button type="submit">Да</button>
+    <a href="{% url 'user-posts' user.pk %}">Отмена</a>
+  </div>
+</form>
